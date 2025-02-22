@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {
   ClerkProvider,
@@ -10,15 +9,7 @@ import {
 } from '@clerk/nextjs'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,13 +24,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex justify-between">
+        <body className="antialiased">
+          <header className="flex justify-between p-4">
             <h1></h1>
             <UserButton showName />
           </header>
-
-          <main>
+          <main className="flex items-center justify-center min-h-screen">
             <SignedOut>
               <SignIn routing="hash" />
             </SignedOut>
