@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {
   ClerkProvider,
-  SignInButton,
   SignIn,
   SignedIn,
   SignedOut,
